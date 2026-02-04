@@ -263,7 +263,7 @@ ol {
 -----------------------*/
 
 .header {
-	background: rgba(42, 1, 74, 0.5);
+	background: rgba(42, 1, 74, 0.873);
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -409,21 +409,21 @@ ol {
 }
 
 .hero__text span {
-	color: #ffffff;
+	color: #000000;
 	text-transform: uppercase;
 	letter-spacing: 6px;
-}
+} 
 
 .hero__text h1 {
 	font-size: 110px;
 	font-family: "Rockville Solid Regular";
-	color: #ffffff;
+	color: #000000;
 	margin-bottom: 20px;
 	margin-top: 22px;
 }
 
 .hero__text p {
-	color: #ffffff;
+	color: #000000;
 	margin-bottom: 20px;
 }
 
@@ -453,7 +453,7 @@ ol {
 	top: 15px;
 	height: 60px;
 	width: 60px;
-	background: #ffffff;
+	background: #000000;
 	border-radius: 50%;
 	content: "";
 	z-index: -1;
