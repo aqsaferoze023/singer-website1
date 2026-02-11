@@ -45,7 +45,7 @@ h4,
 h5,
 h6 {
 	margin: 0;
-	color: #111111;
+	color: #ffffff;
 	font-weight: 400;
 	font-family: "Rajdhani", sans-serif;
 }
@@ -588,6 +588,12 @@ ol {
 	color: #5c00ce;
 	margin-right: 8px;
 	font-size: 17px;
+}
+
+
+.service-icon {
+    width: 25px;     /* Medium icon size */
+    height: auto;
 }
 
 /*---------------------
@@ -1375,6 +1381,10 @@ ol {
 /*---------------------
   About Pic
 -----------------------*/
+.about__text {
+    margin-top: 0;
+    padding-top: 0;
+}
 
 .about-pic {
 	overflow: hidden;
