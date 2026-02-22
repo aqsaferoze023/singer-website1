@@ -92,83 +92,53 @@
             </div>
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="discography__item">
-                        <div class="discography__item__pic">
-                            <img src="img/discography/disco-1.jpg" alt="">
+                    <div class="youtube__item">
+                        <div class="youtube__item__pic set-bg" data-setbg="img/youtube/58.jpg.jpeg">
+                            <a href="#" class="play-btn audio-popup" data-track-title="Shaq - Bohemia" data-track-url="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/karan-randhawa-882164171/shaq-bohemia"><i class="fa fa-play"></i></a>
                         </div>
-                        <div class="discography__item__text">
-                            <span>$ 52.00</span>
-                            <h4>EDM Party Electro House</h4>
+                        <div class="youtube__item__text">
+                            <h4>Shaq - Bohemia</h4>
+                        </div>
+                    </div>
+                </div>
+              <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="youtube__item">
+                        <div class="youtube__item__pic set-bg" data-setbg="img/youtube/event-3.JPG">
+                            <a href="#" class="play-btn audio-popup" data-track-title="Kali Hoodie - Bohemia" data-track-url="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/karan-randhawa-882164171/kali-hoodie-bohemia"><i class="fa fa-play"></i></a>
+                        </div>
+                        <div class="youtube__item__text">
+                            <h4>Kali Hoodie - Bohemia</h4>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="discography__item">
-                        <div class="discography__item__pic">
-                            <img src="img/discography/disco-3.jpg" alt="">
+                    <div class="youtube__item">
+                        <div class="youtube__item__pic set-bg" data-setbg="img/youtube/55.jpg.jpeg">
+                            <a href="#" class="play-btn audio-popup" data-track-title="Shehzada - Bohemia" data-track-url="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/new-punjabi-songs-2024-139664624/shehzada-bohemia"><i class="fa fa-play"></i></a>
                         </div>
-                        <div class="discography__item__text">
-                            <span>$ 52.00</span>
-                            <h4>EDM Party Electro House</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="discography__item">
-                        <div class="discography__item__pic">
-                            <img src="img/discography/disco-4.jpg" alt="">
-                        </div>
-                        <div class="discography__item__text">
-                            <span>$ 52.00</span>
-                            <h4>EDM Party Electro House</h4>
+                        <div class="youtube__item__text">
+                            <h4>Shehzada - Bohemia</h4>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="discography__item">
-                        <div class="discography__item__pic">
-                            <img src="img/discography/disco-6.jpg" alt="">
-                        </div>
-                        <div class="discography__item__text">
-                            <span>$ 52.00</span>
-                            <h4>EDM Party Electro House</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="discography__item">
-                        <div class="discography__item__pic">
-                            <img src="img/discography/disco-6.jpg" alt="">
-                        </div>
-                        <div class="discography__item__text">
-                            <span>$ 52.00</span>
-                            <h4>EDM Party Electro House</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="discography__item">
-                        <div class="discography__item__pic">
-                            <img src="img/discography/disco-6.jpg" alt="">
-                        </div>
-                        <div class="discography__item__text">
-                            <span>$ 52.00</span>
-                            <h4>EDM Party Electro House</h4>
-                        </div>
-                    </div>
-                </div>
-                <!-- <div class="col-lg-12">
-                    <div class="pagination__links">
-                        <a href="#">1</a>
-                        <a href="#">2</a>
-                        <a href="#">3</a>
-                        <a href="#">Next</a>
-                    </div>
-                </div> -->
             </div>
         </div>
     </section>
     <!-- Discography Section End -->
+
+    <!-- Audio Modal (Blue Popup with White Content) -->
+    <div class="audio-modal-overlay" id="audioModal">
+        <div class="audio-modal-content">
+            <button class="audio-modal-close" id="closeAudioModal">&times;</button>
+            <div class="audio-modal-header">
+                <h3>Latest Tracks</h3>
+            </div>
+            <div class="audio-modal-tracks-list" id="tracksListContainer">
+                <!-- Tracks will be added here -->
+            </div>
+            <div class="audio-modal-player" id="audioPlayerWrapper"></div>
+        </div>
+    </div>
 
     <!-- Footer Section Begin -->
     <footer class="footer footer--normal spad set-bg" data-setbg="img/footer-bg.png">
@@ -227,6 +197,237 @@
     <!-- Music Plugin -->
     <script src="js/jquery.jplayer.min.js"></script>
     <script src="js/jplayerInit.js"></script>
+
+    <!-- Audio Modal Styles -->
+    <style>
+/* Audio Modal Styles - Blue Blurred Background, White Popup */
+.audio-modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(30, 60, 150, 0.85);
+    backdrop-filter: blur(8px);
+    z-index: 99999;
+    align-items: center;
+    justify-content: center;
+}
+.audio-modal-overlay.active {
+    display: flex;
+}
+.audio-modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 700px;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 15px 60px rgba(0, 0, 0, 0.6);
+}
+.audio-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    color: #333;
+    font-size: 40px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.audio-modal-close:hover {
+    color: #667eea;
+    transform: rotate(90deg);
+}
+.audio-modal-header {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 20px;
+}
+.audio-modal-header h3 {
+    font-size: 28px;
+    margin: 0;
+    color: #333;
+    font-weight: 700;
+}
+.audio-modal-tracks-list {
+    margin-bottom: 30px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+.track-item {
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    background: #f9f9f9;
+    border-left: 4px solid #290849;
+;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.track-item:hover {
+    background: #f0f0f0;
+    padding-left: 20px;
+}
+.track-item.active {
+    background: #290849;
+    color: #fff;
+}
+.track-item h5 {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+    font-weight: 700;
+}
+.track-item.active h5 {
+    color: #fff;
+    font-weight: 600;
+}
+.audio-modal-player {
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+.audio-modal-player p {
+    margin: 0 0 15px 0;
+    color: #666;
+    font-size: 14px;
+}
+.audio-modal-player iframe {
+    width: 100%;
+    height: 120px;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .audio-modal-content {
+        width: 95%;
+        padding: 25px;
+    }
+    .audio-modal-header h3 {
+        font-size: 22px;
+    }
+    .audio-modal-tracks-list {
+        max-height: 300px;
+    }
+}
+    </style>
+
+    <!-- Audio Modal Script with 6 Tracks -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // All 6 tracks from index.html
+        const allTracks = [
+            {
+                title: 'Shaq - Bohemia',
+                url: 'https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/karan-randhawa-882164171/shaq-bohemia'
+            },
+            {
+                title: 'Kali Hoodie - Bohemia',
+                url: 'https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/karan-randhawa-882164171/kali-hoodie-bohemia'
+            },
+            {
+                title: 'Shehzada - Bohemia',
+                url: 'https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/new-punjabi-songs-2024-139664624/shehzada-bohemia'
+            },
+            {
+                title: 'Campaign Speech - Eminem',
+                url: 'https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/shadyrecords/eminem-campaign-speech'
+            },
+            {
+                title: '410 - Sidhu Moosewala',
+                url: 'https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/brand-new-punjabi-songs-461847022/410-sidhu-moosewala-bohemia'
+            },
+            {
+                title: 'Chorni (Old Version)',
+                url: 'https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/mapapa1565/chorni-oldversion'
+            }
+        ];
+
+        const audioModal = document.getElementById('audioModal');
+        const closeAudioBtn = document.getElementById('closeAudioModal');
+        const tracksListContainer = document.getElementById('tracksListContainer');
+        const audioPlayerWrapper = document.getElementById('audioPlayerWrapper');
+
+        // Populate tracks list
+        function populateTracksList() {
+            tracksListContainer.innerHTML = '';
+            allTracks.forEach((track, index) => {
+                const trackDiv = document.createElement('div');
+                trackDiv.className = 'track-item';
+                trackDiv.innerHTML = `<h5>▶ ${track.title}</h5>`;
+                trackDiv.addEventListener('click', function() {
+                    playTrack(track, index);
+                });
+                tracksListContainer.appendChild(trackDiv);
+            });
+        }
+
+        // Play selected track
+        function playTrack(track, index) {
+            audioPlayerWrapper.innerHTML = `
+                <p><strong>Now Playing:</strong> ${track.title}</p>
+                <iframe width="100%" height="120" scrolling="no" frameborder="no" allow="autoplay" src="${track.url}"></iframe>
+            `;
+            
+            // Highlight active track
+            document.querySelectorAll('.track-item').forEach((item, i) => {
+                if (i === index) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+        }
+
+        // Open audio modal from discography play buttons
+        const audioPlayButtons = document.querySelectorAll('.audio-popup');
+        audioPlayButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                populateTracksList();
+                audioModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                
+                // Play the clicked track
+                const trackTitle = this.getAttribute('data-track-title');
+                const trackIndex = allTracks.findIndex(t => t.title === trackTitle);
+                if (trackIndex !== -1) {
+                    playTrack(allTracks[trackIndex], trackIndex);
+                }
+            });
+        });
+
+        // Close audio modal
+        closeAudioBtn.addEventListener('click', function() {
+            audioModal.classList.remove('active');
+            audioPlayerWrapper.innerHTML = '';
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close on overlay click
+        audioModal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                audioModal.classList.remove('active');
+                audioPlayerWrapper.innerHTML = '';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Close on ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && audioModal.classList.contains('active')) {
+                audioModal.classList.remove('active');
+                audioPlayerWrapper.innerHTML = '';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    });
+    </script>
 </body>
 
 </html>

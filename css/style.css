@@ -273,7 +273,7 @@ ol {
 
 .header.header--normal {
 	position: relative;
-	background: #290849;
+	background: #3a1c57;
 }
 
 .header__logo {
@@ -592,7 +592,7 @@ ol {
 
 
 .service-icon {
-    width: 25px;     /* Medium icon size */
+    width: 35px;     /* Medium icon size */
     height: auto;
 }
 
