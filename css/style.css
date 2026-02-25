@@ -263,7 +263,7 @@ ol {
 -----------------------*/
 
 .header {
-	background: rgba(42, 1, 74, 0.5);
+	background: rgba(42, 1, 74, 0.2);
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -273,7 +273,7 @@ ol {
 
 .header.header--normal {
 	position: relative;
-	background: #3a1c57;
+	background: #290849;
 }
 
 .header__logo {
@@ -400,10 +400,29 @@ ol {
 
 .hero {
 	padding-top: 400px;
-	padding-bottom: 295px;
+	padding-bottom: 200px;
 	position: relative;
+	
 }
 
+.linear__icon i {
+    font-size: 45px;
+  font-weight: 900;
+  /* -webkit-text-stroke: 1.5px #5B21B6; */
+  /* color: #5B21B6; */
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    /* transform: translateX(-50%); */
+    width: 200px;      /* curve width */
+    height: 100px;     /* curve depth */
+    /* background: white; /* section background color */
+    border-radius: 50%;
+}
 .hero__text {
 	text-align: center;
 }
@@ -592,7 +611,7 @@ ol {
 
 
 .service-icon {
-    width: 35px;     /* Medium icon size */
+    width: 39px;     /* Medium icon size */
     height: auto;
 }
 
